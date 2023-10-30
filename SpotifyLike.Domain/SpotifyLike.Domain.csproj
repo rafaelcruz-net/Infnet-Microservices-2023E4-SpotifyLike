@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Streaming\Aggregates\" />
-    <Folder Include="Streaming\ValueObject\" />
-  </ItemGroup>
-
 </Project>
