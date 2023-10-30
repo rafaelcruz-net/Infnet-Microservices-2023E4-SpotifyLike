@@ -16,5 +16,6 @@ namespace SpotifyLike.Domain.Conta.Agreggates
         public List<Cartao> Cartoes { get; set;}
         public List<Playlist> Playlists { get; set;}
         public List<Banda> BandasFavoritas { get; set; }
+        public List<Assinatura> Assinaturas { get; set; }
     }
 }

@@ -13,5 +13,6 @@ namespace SpotifyLike.Domain.Transacao.Agreggates
         public DateTime DtTransacao { get; set; }
         public Decimal Valor { get; set; }
         public Merchant Merchant { get; set; }
+        public String Descricao { get; set; }
     }
 }
