@@ -31,14 +31,14 @@ namespace SpotifyLike.Domain.Conta.Agreggates
             this.CPF = new CPF(cpf);
             this.Nome = nome;
 
-            //Criar Playlist Default
-            this.CriarPlayList();
+            //Assinar um plano
+            this.AssinarPlano(plano, cartao);
 
             //Adicionar o cartão na conta do usuário
             this.AdicionarCartao(cartao);
 
-            //Assinar um plano
-            this.AssinarPlano(plano, cartao);
+            //Criar Playlist Default
+            this.CriarPlayList();
 
         }
 
@@ -49,6 +49,7 @@ namespace SpotifyLike.Domain.Conta.Agreggates
 
         public void AssinarPlano(Plano plano, Cartao cartao)
         {
+
             //Debitar o valor do plano no cartão
             cartao.CriarTransacao(plano.Nome, plano.Valor, plano.Descricao);
 
@@ -67,8 +68,6 @@ namespace SpotifyLike.Domain.Conta.Agreggates
                 Plano = plano,
                 Id = Guid.NewGuid()
             });
-
-
         }
 
         public void CriarPlayList(string nome = "Favoritas")
