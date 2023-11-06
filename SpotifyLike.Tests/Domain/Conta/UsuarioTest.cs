@@ -1,4 +1,5 @@
 ﻿using SpotifyLike.Domain.Conta.Agreggates;
+using SpotifyLike.Domain.Conta.Exception;
 using SpotifyLike.Domain.Streaming.Aggregates;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,64 @@ namespace SpotifyLike.Tests.Domain.Conta
             Assert.True(usuario.Playlists[0].Nome == "Favoritas");
             Assert.False(usuario.Playlists[0].Publica);
         }
+
+        [Fact()]
+        public void NaoDeveCriarUsuarioComCPFInvalido()
+        {
+            Plano plano = new Plano()
+            {
+                Descricao = "Lorem ipsum",
+                Id = Guid.NewGuid(),
+                Nome = "Plano Dummy",
+                Valor = 19.90M
+            };
+
+            Cartao cartao = new Cartao()
+            {
+                Id = Guid.NewGuid(),
+                Ativo = true,
+                Limite = 1000M,
+                Numero = "6465465466",
+            };
+
+            string cpf = "406351545685";
+            string nome = "Dummy Usuario";
+            Usuario usuario = new Usuario();
+
+            Assert.Throws<CPFException>
+                (() => usuario.Criar(nome, cpf, plano, cartao));
+
+        }
+
+
+        [Fact()]
+        public void NaoDeveCriarUsuarioComCartaoInvalido()
+        {
+            Plano plano = new Plano()
+            {
+                Descricao = "Lorem ipsum",
+                Id = Guid.NewGuid(),
+                Nome = "Plano Dummy",
+                Valor = 19.90M
+            };
+
+            Cartao cartao = new Cartao()
+            {
+                Id = Guid.NewGuid(),
+                Ativo = false,
+                Limite = 1000M,
+                Numero = "6465465466",
+            };
+
+            string cpf = "40635121000";
+            string nome = "Dummy Usuario";
+            Usuario usuario = new Usuario();
+
+            Assert.Throws<CartaoException>
+                (() => usuario.Criar(nome, cpf, plano, cartao));
+
+        }
+
     }
 }
 

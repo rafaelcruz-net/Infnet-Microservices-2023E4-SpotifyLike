@@ -12,7 +12,7 @@ namespace SpotifyLike.Domain.Conta.Agreggates
     {
 
         private const int TRANSACTION_TIME_INTERVAL = -2;
-        private const int TRANSACTION_MERCHANT_REPEAT = 2;
+        private const int TRANSACTION_MERCHANT_REPEAT = 1;
        
 
         public Guid Id { get; set; }

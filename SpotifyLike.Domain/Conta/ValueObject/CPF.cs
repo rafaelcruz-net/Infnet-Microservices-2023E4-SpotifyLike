@@ -44,7 +44,7 @@ namespace SpotifyLike.Domain.Conta.ValueObject
             string digito;
             int soma;
             int resto;
-            var cpf = this.Numero.Trim();
+            var cpf = this.Numero.Trim().Replace(".", "").Replace("-", "");
             
             if (cpf.Length != 11)
                 return false;
