@@ -24,6 +24,7 @@ namespace SpotifyLike.Domain.Conta.Agreggates
             this.Playlists = new List<Playlist>();
             this.BandasFavoritas = new List<Banda>();
             this.Assinaturas = new List<Assinatura>();
+            this.Cartoes = new List<Cartao>();
         }
 
         public void Criar(string nome, string cpf, Plano plano, Cartao cartao)

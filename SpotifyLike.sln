@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotifyLike.Domain", "SpotifyLike.Domain\SpotifyLike.Domain.csproj", "{DCE4C973-BD5D-493F-A971-4E0BB7A00F57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyLike.Core", "SpotifyLike.Core\SpotifyLike.Core.csproj", "{C81E3ABD-8319-4840-8A39-D08EFA8BC44C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotifyLike.Core", "SpotifyLike.Core\SpotifyLike.Core.csproj", "{C81E3ABD-8319-4840-8A39-D08EFA8BC44C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyLike.Tests", "SpotifyLike.Tests\SpotifyLike.Tests.csproj", "{947F446D-B2AB-42DB-8FD9-6DC5689F1F4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C81E3ABD-8319-4840-8A39-D08EFA8BC44C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C81E3ABD-8319-4840-8A39-D08EFA8BC44C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C81E3ABD-8319-4840-8A39-D08EFA8BC44C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{947F446D-B2AB-42DB-8FD9-6DC5689F1F4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{947F446D-B2AB-42DB-8FD9-6DC5689F1F4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{947F446D-B2AB-42DB-8FD9-6DC5689F1F4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{947F446D-B2AB-42DB-8FD9-6DC5689F1F4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
