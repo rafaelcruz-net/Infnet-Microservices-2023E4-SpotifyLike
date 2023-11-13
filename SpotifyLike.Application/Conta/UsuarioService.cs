@@ -15,7 +15,7 @@ namespace SpotifyLike.Application.Conta
     public class UsuarioService
     {
         private PlanoRepository planoRepository = new PlanoRepository();
-        private UsuarioRepository usarioRepository = new UsuarioRepository();
+        private UsuarioRepository usuarioRepository = new UsuarioRepository();
 
 
         public CriarContaDto CriarConta(CriarContaDto conta)
@@ -43,7 +43,7 @@ namespace SpotifyLike.Application.Conta
             usuario.Criar(conta.Nome, conta.CPF, plano, cartao);
 
             //Gravar o usuario na base;
-            this.usarioRepository.SalvarUsuario(usuario);
+            this.usuarioRepository.SalvarUsuario(usuario);
             conta.Id = usuario.Id;
 
             // Retornar Conta Criada
