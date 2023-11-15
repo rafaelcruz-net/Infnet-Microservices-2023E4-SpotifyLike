@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SpotifyLike.API\SpotifyLike.API.csproj" />
     <ProjectReference Include="..\SpotifyLike.Application\SpotifyLike.Application.csproj" />
     <ProjectReference Include="..\SpotifyLike.Domain\SpotifyLike.Domain.csproj" />
   </ItemGroup>
