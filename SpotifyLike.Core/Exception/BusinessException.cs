@@ -9,6 +9,13 @@ namespace SpotifyLike.Core.Exception
     public class BusinessException : System.Exception
     {
         public List<BusinessValidation> Errors { get; set; } = new List<BusinessValidation>();
+
+        public BusinessException() { }
+
+        public BusinessException(BusinessValidation validation)
+        {
+            this.AddError(validation);
+        }
         
         public void AddError(BusinessValidation validation)
         {
