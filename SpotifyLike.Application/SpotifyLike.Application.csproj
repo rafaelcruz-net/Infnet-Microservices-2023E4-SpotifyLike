@@ -12,8 +12,4 @@
     <ProjectReference Include="..\SpotifyLike.Repository\SpotifyLike.Repository.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Streaming\" />
-  </ItemGroup>
-
 </Project>
