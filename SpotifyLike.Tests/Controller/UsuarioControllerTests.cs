@@ -15,7 +15,7 @@ namespace SpotifyLike.Tests.Controller
         [Fact]
         public void DeveChamarPostCriarUsuaarioComSucesso()
         {
-            CriarContaDto dto = new CriarContaDto()
+            UsuarioDto dto = new UsuarioDto()
             {
                 Nome = "Lorem Ipsum do teste",
                 CPF = "26952278095",
@@ -38,8 +38,8 @@ namespace SpotifyLike.Tests.Controller
             Assert.True(response is CreatedResult);
 
             var responseContent = (response as CreatedResult).Value;
-            Assert.True(responseContent is CriarContaDto);
-            Assert.True((responseContent as CriarContaDto).Id != Guid.Empty);
+            Assert.True(responseContent is UsuarioDto);
+            Assert.True((responseContent as UsuarioDto).Id != Guid.Empty);
         }
     }
 }

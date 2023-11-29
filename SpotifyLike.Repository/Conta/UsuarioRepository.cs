@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace SpotifyLike.Repository.Conta
 {
@@ -11,7 +12,12 @@ namespace SpotifyLike.Repository.Conta
     {
         private static List<Usuario> usuarios = new List<Usuario>();
 
-        
+        public Usuario ObterUsuario(Guid id)
+        {
+            return UsuarioRepository
+                        .usuarios
+                        .FirstOrDefault(x => x.Id == id);
+        }
 
         public void SalvarUsuario(Usuario usuario)
         {

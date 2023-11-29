@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpotifyLike.Application.Conta.Dto
 {
-    public class CriarContaDto
+    public class UsuarioDto
     {
         public Guid Id { get; set; }
 

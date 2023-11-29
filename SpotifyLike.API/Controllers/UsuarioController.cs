@@ -19,7 +19,7 @@ namespace SpotifyLike.API.Controllers
 
 
         [HttpPost]
-        public IActionResult CriarConta(CriarContaDto dto)
+        public IActionResult CriarConta(UsuarioDto dto)
         {
             if (ModelState.IsValid == false)
                 return BadRequest(ModelState);
@@ -27,6 +27,17 @@ namespace SpotifyLike.API.Controllers
             this._service.CriarConta(dto);
 
             return Created($"/usuario/{dto.Id}", dto);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult ObterUsuario(Guid id)
+        {
+            var result = this._service.ObterUsuario(id);
+            
+            if (result == null)
+                return NotFound();
+
+            return Ok(result);
         }
 
     }

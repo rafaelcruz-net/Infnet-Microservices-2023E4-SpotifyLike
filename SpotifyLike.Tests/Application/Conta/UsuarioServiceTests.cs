@@ -15,7 +15,7 @@ namespace SpotifyLike.Tests.Application.Conta
         public void DeveCriarContaComSucesso()
         {
             //Arrange
-            CriarContaDto dto = new CriarContaDto()
+            UsuarioDto dto = new UsuarioDto()
             {
                 Nome = "Lorem Ipsum do teste",
                 CPF = "26952278095",
@@ -38,7 +38,7 @@ namespace SpotifyLike.Tests.Application.Conta
         public void NaoDeveCriarContaComPlanoInvalido()
         {
             //Arrange
-            CriarContaDto dto = new CriarContaDto()
+            UsuarioDto dto = new UsuarioDto()
             {
                 Nome = "Lorem Ipsum do teste",
                 CPF = "26952278095",
