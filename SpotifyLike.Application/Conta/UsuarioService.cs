@@ -1,4 +1,5 @@
 ﻿using SpotifyLike.Application.Conta.Dto;
+using SpotifyLike.Application.Streaming;
 using SpotifyLike.Core.Exception;
 using SpotifyLike.Domain.Conta.Agreggates;
 using SpotifyLike.Domain.Streaming.Aggregates;
@@ -16,7 +17,7 @@ namespace SpotifyLike.Application.Conta
     {
         private PlanoRepository planoRepository = new PlanoRepository();
         private UsuarioRepository usuarioRepository = new UsuarioRepository();
-
+        private BandaService bandaService = new BandaService();
 
         public UsuarioDto CriarConta(UsuarioDto conta)
         {
@@ -68,9 +69,62 @@ namespace SpotifyLike.Application.Conta
                 },
                 CPF = usuario.CPF.NumeroFormatado(),
                 Nome = usuario.Nome,
+                Playlists = new List<PlaylistDto>() 
             };
 
+            foreach (var item in usuario.Playlists)
+            {
+                var playList = new PlaylistDto()
+                {
+                    Id = item.Id,
+                    Nome = item.Nome,
+                    Publica = item.Publica,
+                    Musicas = new List<Streaming.Dto.MusicaDto>() 
+                };
+
+                foreach (var musicas in item.Musicas)
+                {
+                    playList.Musicas.Add(new Streaming.Dto.MusicaDto()
+                    {
+                        Duracao = musicas.Duracao.Valor,
+                        Id = musicas.Id,
+                        Nome = musicas.Nome
+                    });
+                }
+
+                result.Playlists.Add(playList);
+            }
+
             return result;
+        }
+
+        public void FavoritarMusica(Guid id, Guid idMusica)
+        {
+            var usuario = this.usuarioRepository.ObterUsuario(id);
+
+            if (usuario == null)
+            {
+                throw new BusinessException(new BusinessValidation()
+                {
+                    ErrorMessage = "Não encontrei o usuário",
+                    ErrorName = nameof(FavoritarMusica)
+                });
+            }
+
+            var musica = this.bandaService.ObterMusica(idMusica);
+
+            if (musica == null)
+            {
+                throw new BusinessException(new BusinessValidation()
+                {
+                    ErrorMessage = "Não encontrei a musica",
+                    ErrorName = nameof(FavoritarMusica)
+                });
+            }
+
+            usuario.Favoritar(musica);
+            this.usuarioRepository.Update(usuario);
+
         }
     }
 }
