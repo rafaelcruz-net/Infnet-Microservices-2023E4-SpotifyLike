@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyLike.Streaming.Domain", "SpotifyLike.Streaming.Domain\SpotifyLike.Streaming.Domain.csproj", "{357A1C95-BB7E-44AA-B7A6-A3E2ED2A317A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyLike.Streaming.Repository", "SpotifyLike.Streaming.Repository\SpotifyLike.Streaming.Repository.csproj", "{BD068842-A8E9-474A-B4E7-E722EB2408D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyLike.Streaming.Application", "SpotifyLike.Streaming.Application\SpotifyLike.Streaming.Application.csproj", "{07E62AA8-FA2B-41DA-BB24-B992BBE9B44E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyLike.Core", "SpotifyLike.Core\SpotifyLike.Core.csproj", "{A7ED539C-5769-4615-B432-2213425BA1F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyLike.Streaming.API", "SpotifyLike.Streaming.API\SpotifyLike.Streaming.API.csproj", "{36CB0FDB-8D26-43A9-BC7E-0FA9E49D6FB7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{357A1C95-BB7E-44AA-B7A6-A3E2ED2A317A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{357A1C95-BB7E-44AA-B7A6-A3E2ED2A317A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{357A1C95-BB7E-44AA-B7A6-A3E2ED2A317A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{357A1C95-BB7E-44AA-B7A6-A3E2ED2A317A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD068842-A8E9-474A-B4E7-E722EB2408D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD068842-A8E9-474A-B4E7-E722EB2408D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD068842-A8E9-474A-B4E7-E722EB2408D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD068842-A8E9-474A-B4E7-E722EB2408D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07E62AA8-FA2B-41DA-BB24-B992BBE9B44E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07E62AA8-FA2B-41DA-BB24-B992BBE9B44E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07E62AA8-FA2B-41DA-BB24-B992BBE9B44E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07E62AA8-FA2B-41DA-BB24-B992BBE9B44E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7ED539C-5769-4615-B432-2213425BA1F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7ED539C-5769-4615-B432-2213425BA1F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7ED539C-5769-4615-B432-2213425BA1F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7ED539C-5769-4615-B432-2213425BA1F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36CB0FDB-8D26-43A9-BC7E-0FA9E49D6FB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36CB0FDB-8D26-43A9-BC7E-0FA9E49D6FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36CB0FDB-8D26-43A9-BC7E-0FA9E49D6FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36CB0FDB-8D26-43A9-BC7E-0FA9E49D6FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7F66463-E493-4880-83D8-CE3A19B4C632}
+	EndGlobalSection
+EndGlobal

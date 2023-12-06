@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpotifyLike.Core\SpotifyLike.Core.csproj" />
+    <ProjectReference Include="..\SpotifyLike.Streaming.Domain\SpotifyLike.Streaming.Domain.csproj" />
+    <ProjectReference Include="..\SpotifyLike.Streaming.Repository\SpotifyLike.Streaming.Repository.csproj" />
+  </ItemGroup>
+
+</Project>
