@@ -1,5 +1,5 @@
-﻿using SpotifyLike.Application.Streaming.Dto;
-using SpotifyLike.Domain.Streaming.Aggregates;
+﻿using SpotifyLike.Application.Conta.Dto;
+using SpotifyLike.Domain.Conta.Aggregates;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -45,6 +45,14 @@ namespace SpotifyLike.Application.Conta.Dto
         public string Nome { get; set; }
         public Boolean Publica { get; set; }
         public List<MusicaDto> Musicas { get; set; }
+
+    }
+
+    public class MusicaDto
+    {
+        public Guid Id { get; set; }
+        public string Nome { get; set; }
+        public int Duracao { get; set; }
 
     }
 }

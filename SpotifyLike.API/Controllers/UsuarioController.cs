@@ -19,12 +19,12 @@ namespace SpotifyLike.API.Controllers
 
 
         [HttpPost]
-        public IActionResult CriarConta(UsuarioDto dto)
+        public async Task<IActionResult> CriarConta(UsuarioDto dto)
         {
             if (ModelState.IsValid == false)
                 return BadRequest(ModelState);
 
-            this._service.CriarConta(dto);
+            await this._service.CriarConta(dto);
 
             return Created($"/usuario/{dto.Id}", dto);
         }
@@ -41,9 +41,9 @@ namespace SpotifyLike.API.Controllers
         }
 
         [HttpPost("{id}/favoritar")]
-        public IActionResult FavoritarMusica(Guid id, FavoritarDto dto)
+        public async Task<IActionResult> FavoritarMusica(Guid id, FavoritarDto dto)
         {
-            this._service.FavoritarMusica(id, dto.IdMusica);
+            await this._service.FavoritarMusica(id, dto.IdMusica);
             return Ok();
         }
 

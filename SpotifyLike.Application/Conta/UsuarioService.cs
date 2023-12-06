@@ -1,28 +1,29 @@
 ﻿using SpotifyLike.Application.Conta.Dto;
-using SpotifyLike.Application.Streaming;
+using SpotifyLike.Application.Conta;
 using SpotifyLike.Core.Exception;
 using SpotifyLike.Domain.Conta.Agreggates;
-using SpotifyLike.Domain.Streaming.Aggregates;
 using SpotifyLike.Repository.Conta;
-using SpotifyLike.Repository.Streaming;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SpotifyLike.Repository;
+using SpotifyLike.Domain.Conta.Aggregates;
 
 namespace SpotifyLike.Application.Conta
 {
     public class UsuarioService
     {
-        private PlanoRepository planoRepository = new PlanoRepository();
         private UsuarioRepository usuarioRepository = new UsuarioRepository();
-        private BandaService bandaService = new BandaService();
+        private PlanoRepository planoRepository = new PlanoRepository(); 
+        private BandaRepository bandaRepository = new BandaRepository();
 
-        public UsuarioDto CriarConta(UsuarioDto conta)
+
+        public async Task<UsuarioDto> CriarConta(UsuarioDto conta)
         {
             //Todo: Verificar pegar plano
-            Plano plano = this.planoRepository.ObterPlanoPorId(conta.PlanoId);
+            Plano plano = await this.planoRepository.ObterPlano(conta.PlanoId);
 
             if (plano == null)
             {
@@ -79,14 +80,14 @@ namespace SpotifyLike.Application.Conta
                     Id = item.Id,
                     Nome = item.Nome,
                     Publica = item.Publica,
-                    Musicas = new List<Streaming.Dto.MusicaDto>() 
+                    Musicas = new List<Conta.Dto.MusicaDto>() 
                 };
 
                 foreach (var musicas in item.Musicas)
                 {
-                    playList.Musicas.Add(new Streaming.Dto.MusicaDto()
+                    playList.Musicas.Add(new Conta.Dto.MusicaDto()
                     {
-                        Duracao = musicas.Duracao.Valor,
+                        Duracao = musicas.Duracao,
                         Id = musicas.Id,
                         Nome = musicas.Nome
                     });
@@ -98,7 +99,7 @@ namespace SpotifyLike.Application.Conta
             return result;
         }
 
-        public void FavoritarMusica(Guid id, Guid idMusica)
+        public async Task FavoritarMusica(Guid id, Guid idMusica)
         {
             var usuario = this.usuarioRepository.ObterUsuario(id);
 
@@ -111,7 +112,7 @@ namespace SpotifyLike.Application.Conta
                 });
             }
 
-            var musica = this.bandaService.ObterMusica(idMusica);
+            var musica = await this.bandaRepository.ObterMusica(idMusica);
 
             if (musica == null)
             {

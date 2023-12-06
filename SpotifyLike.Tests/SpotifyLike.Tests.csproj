@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Application\Streaming\**" />
+    <EmbeddedResource Remove="Application\Streaming\**" />
+    <None Remove="Application\Streaming\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
@@ -25,10 +31,6 @@
     <ProjectReference Include="..\SpotifyLike.API\SpotifyLike.API.csproj" />
     <ProjectReference Include="..\SpotifyLike.Application\SpotifyLike.Application.csproj" />
     <ProjectReference Include="..\SpotifyLike.Domain\SpotifyLike.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Application\Streaming\" />
   </ItemGroup>
 
 </Project>
